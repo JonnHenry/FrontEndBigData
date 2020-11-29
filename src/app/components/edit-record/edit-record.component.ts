@@ -86,14 +86,12 @@ export class EditRecordComponent implements OnInit {
 
 
   onSubmit() {
-    console.log("Ingreso")
     this._fligthsService.updatePersona(this.register, this._id).subscribe(
       result => {
         console.log(result)
         if (result["ok"] == true) {
           alert("Se actualizo los datos correctamente")
           this.navigateUrl.navigateByUrl("/view").then(e => {
-
           })
         } else {
           alert("Ha ocurrido un problema al actualizar los datos")

@@ -8,13 +8,15 @@ import { EditRecordComponent } from './components/edit-record/edit-record.compon
 import { CreateRecordComponent } from './components/create-record/create-record.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
+import { ViewSingleRecordComponent } from './components/view-single-record/view-single-record.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewRecordsComponent,
     EditRecordComponent,
-    CreateRecordComponent
+    CreateRecordComponent,
+    ViewSingleRecordComponent
   ],
   imports: [
     BrowserModule,

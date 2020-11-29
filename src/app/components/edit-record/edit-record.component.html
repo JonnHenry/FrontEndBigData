@@ -1,1 +1,311 @@
-<p>edit-record works!</p>
+<div *ngIf="completed != true; else elseBlock">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>
+<ng-template #elseBlock>
+
+    <div class="container col-xl-12  col-lg-12 col-md-12 col-sm-12">
+
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <h1>Actualice los Datos</h1>
+            
+            <div class="row">
+                <div class="col-xl-3  col-lg-3 col-md-3 col-sm-12">
+                    <div class="form-group">
+                        <label for="anio">Año</label>
+                        <select class="form-control" name="anio" id="anio" [(ngModel)]="register.Year" [ngModelOptions]="{standalone: true}">
+                            <option value="1987">1987</option>
+                            <option value="1988">1988</option>
+                            <option value="1989">1989</option>
+                            <option value="1990">1990</option>
+                            <option value="1991">1991</option>
+                            <option value="1992">1992</option>
+                            <option value="1993">1993</option>
+                            <option value="1994">1994</option>
+                            <option value="1994">1994</option>
+                            <option value="1995">1995</option>
+                            <option value="1996">1996</option>
+                            <option value="1997">1997</option>
+                            <option value="1998">1998</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xl-3  col-lg-3 col-md-3 col-sm-12">
+                    <div class="form-group">
+                        <label for="meses">Mes</label>
+                        <select class="form-control" name="meses" id="meses" [(ngModel)]="register.Month" [ngModelOptions]="{standalone: true}">
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-3  col-lg-3 col-md-3 col-sm-12">
+                    <div class="form-group">
+                        <label for="diasemana">Dia Semana</label>
+                        <select class="form-control" name="diasemana" id="diasemana" [(ngModel)]="register.DayOfWeek"  [ngModelOptions]="{standalone: true}">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-3  col-lg-3 col-md-3 col-sm-12">
+                    <div class="form-group">
+                        <label for="diames">Dia Mes</label>
+                        <select class="form-control" name="diames" id="diames" [(ngModel)]="register.DayofMonth" [ngModelOptions]="{standalone: true}">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-xl-6  col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptDeptTime">Dest</label>
+                        <input value="741" type="text" name="dest" class="form-control" id="iptDeptTime" value="" [(ngModel)]="register.Dest">
+                    </div>
+                </div>
+                
+                <div class="col-xl-6  col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptCRSTime">Origin</label>
+                        <input value="730" type="text" name="origin" class="form-control" id="iptCRSDeepTime" [(ngModel)]="register.Origin" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+    
+                
+            </div>
+    
+    
+            <div class="row">
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptDeptTime">DeptTime</label>
+                        <input value="741" type="text" name="dept" class="form-control" id="iptDeptTime" value="" [(ngModel)]="register.DepTime" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+             
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptCRSTime">CRSDepTime</label>
+                        <input value="730" type="text" name="crsdeptTime" class="form-control" id="iptCRSDeepTime" [(ngModel)]="register.CRSDepTime" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+    
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptArrTime">ArrTime</label>
+                        <input value="912" type="text" name="arrTime" class="form-control" id="iptArrTime" [(ngModel)]="register.ArrTime" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptCRSArrTime">CRSArrTime</label>
+                        <input value="849" type="text" name="crsArrTime" class="form-control" id="iptCRSArrTime" [(ngModel)]="register.CRSArrTime" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptUniqueCarrier">UniqueCarrier</label>
+                        <input value="PS" type="text" name="uniqueCarrier" class="form-control" id="iptUniqueCarrier" [(ngModel)]="register.UniqueCarrier" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptFlightNum">FlightNum</label>
+                        <input value="1451" type="text" name="flightNum" class="form-control" id="iptFlightNum" [(ngModel)]="register.FlightNum" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptTailNum">TailNum</label>
+                        <input value="NA" type="text" name="tailNum" class="form-control" id="iptTailNum" [(ngModel)]="register.TailNum" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptActualElapsedTime">ActualElapsedTime</label>
+                        <input value="23" type="text" name="actualElapsed" class="form-control" id="iptActualElapsedTime" [(ngModel)]="register.ActualElapsedTime" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptCRSElapsedTime">CRSElapsedTime</label>
+                        <input value="11" type="text" name="crseElapsed" class="form-control" id="iptCRSElapsedTime" [(ngModel)]="register.CRSElapsedTime" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptAirTime">AirTime</label>
+                        <input value="447" type="text" name="airTime" class="form-control" id="iptAirTime" [(ngModel)]="register.AirTime" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptArrDelay">ArrDelay</label>
+                        <input value="NA" type="text" name="arrDelay" class="form-control" id="iptArrDelay" [(ngModel)]="register.ArrDelay" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptDepDelay">DepDelay</label>
+                        <input value="0" type="text" name="deepDelay" class="form-control" id="iptDepDelay" [(ngModel)]="register.DepDelay" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptDistance">Distance</label>
+                        <input value="0" type="text" name="distance" class="form-control" id="iptDistance" [(ngModel)]="register.Distance" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptTaxiIn">TaxiIn</label>
+                        <input value="NA" type="text" name="taxiIn" class="form-control" id="iptTaxiIn" [(ngModel)]="register.TaxiIn" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptTaxiOut">TaxiOut</label>
+                        <input value="NA" type="text" name="taxiOut" class="form-control" id="iptTaxiOut"  [(ngModel)]="register.TaxiOut" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptCancelled">Cancelled</label>
+                        <input value="NA" type="text" name="canceled" class="form-control" id="iptCancelled" [(ngModel)]="register.Cancelled" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptCancellationCode">CancellationCode</label>
+                        <input value="NA" type="text" name="cancellationCode" class="form-control" id="iptCancellationCode" [(ngModel)]="register.CancellationCode" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptDiverted">Diverted</label>
+                        <input value="NA" type="text" name="diverted" class="form-control" id="iptDiverted" [(ngModel)]="register.Diverted" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptCarrierDelay">CarrierDelay</label>
+                        <input value="45" type="text" name="carrierDelay" class="form-control" id="iptCarrierDelay" [(ngModel)]="register.CarrierDelay" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptWeatherDelay">WeatherDelay</label>
+                        <input value="NA" type="text" name="weatherDelay" class="form-control" id="iptWeatherDelay" [(ngModel)]="register.WeatherDelay" [ngModelOptions]="{standalone: true}"> 
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptNASDelay">NASDelay</label>
+                        <input value="12" type="text" name="nasDelay" class="form-control" id="iptNASDelay" [(ngModel)]="register.NASDelay" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptSecurityDelay">SecurityDelay</label>
+                        <input value="NA" type="text" name="securityDelay" class="form-control" id="iptSecurityDelay" [(ngModel)]="register.SecurityDelay" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="iptLateAircraftDelay">LateAircraftDelay</label>
+                        <input value="NA" type="text" name="lateAir" class="form-control" id="iptLateAircraftDelay" [(ngModel)]="register.LateAircraftDelay" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+    
+            <button type="submit" [disabled]="!form.valid" class="btn btn-info btn-lg btn-block"> Guardar</button>
+        </form>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+</ng-template>

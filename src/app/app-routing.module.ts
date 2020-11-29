@@ -6,7 +6,7 @@ import { ViewRecordsComponent } from './components/view-records/view-records.com
 
 const routes: Routes = [
   { path: 'create', component: CreateRecordComponent },
-  { path: 'edit', component: EditRecordComponent },
+  { path: 'edit/:fligthId', component: EditRecordComponent },
   { path: 'view', component: ViewRecordsComponent },
   { path: '',   redirectTo: '/view', pathMatch: 'full'}
 ];

@@ -26,6 +26,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-Front para el trabajo de Big Data
->>>>>>> 8ab9e6b918ea8b5947580798d7b7cd7c32673df3
